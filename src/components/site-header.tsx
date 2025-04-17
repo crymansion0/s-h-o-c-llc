@@ -57,12 +57,13 @@ export function SiteHeader() {
             {/* Logo */}
             <div className="h-12 w-40 relative">
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="Signature Homes of Carolina Logo"
                 fill
                 className="object-contain"
                 unoptimized
               />
+
             </div>
           </motion.div>
         </Link>

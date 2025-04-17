@@ -86,9 +86,9 @@ function HeroSection() {
           transition={{ duration: 1, delay: 0.1 }}
           className="mb-12"
         >
-          <div className="w-[300px] h-[200px] md:w-[500px] md:h-[300px] flex items-center justify-center mx-auto mb-8 relative">
+          <div className="w-[200px] h-[300px] md:w-[500px] md:h-[300px] flex items-center justify-center mx-auto mb-5 relative">
             <Image
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Signature Homes of Carolina Logo"
               fill
               className="object-contain"
@@ -103,11 +103,11 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="container"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-helvetica font-bold mb-6 text-white">
-            Quality <span className="text-primary">Custom Homes</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 text-white">
+            <span className="text-primary">Signature</span> Homes of <span className="text-primary">Carolina</span>
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-3 text-white/90">
-            Building dream homes in the low country of South Carolina.
+            Building dream homes in the Low Country of South Carolina.
           </p>
           <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-primary italic">
             Turning ideas to reality.
@@ -181,7 +181,7 @@ function AboutSection() {
               With over forty years of experience building residential homes, our team is committed to delivering exceptional craftsmanship and personalized service to our clients.
             </p>
             <p className="text-lg text-muted-foreground">
-              We specialize in custom homes, barndominiums, and renovations throughout Beaufort County, South Carolina, bringing your dream home vision to life with quality and care.
+              We specialize in custom homes, barndominiums, and renovations throughout the Low Country of South Carolina, bringing your dream home vision to life with quality and care.
             </p>
             <div className="pt-4 grid grid-cols-2 gap-6">
               <div className="flex flex-col space-y-1">
@@ -374,7 +374,7 @@ function FeaturedProjectsSection() {
             </h2>
             <p className="text-lg text-muted-foreground">
               Browse through some of our recent construction projects across
-              Beaufort County, South Carolina, showcasing our quality craftsmanship and attention to detail.
+              the Low Country of South Carolina, showcasing our quality craftsmanship and attention to detail.
             </p>
           </motion.div>
           <motion.div

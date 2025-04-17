@@ -233,7 +233,7 @@ export default function ContactPage() {
           <h2 className="text-2xl font-serif font-bold mb-6">Service Area</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
             We provide custom home building, barndominium construction, and renovation services throughout
-            Beaufort County, South Carolina. Contact us to discuss your project and schedule a consultation.
+            the Low Country of South Carolina. Contact us to discuss your project and schedule a consultation.
           </p>
         </motion.div>
       </div>
