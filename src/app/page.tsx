@@ -69,7 +69,7 @@ function HeroSection() {
       >
         <div className="absolute inset-0 bg-black/50 z-10" />
         <Image
-          src="/placeholder.jpg"
+          src="/images/cover.jpg"
           alt="Luxury home exterior"
           fill
           className="object-cover"
@@ -103,14 +103,14 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="container"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6 text-white">
             <span className="text-primary">Signature</span> Homes of <span className="text-primary">Carolina</span>
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-3 text-white/90">
             Building dream homes in the Low Country of South Carolina.
           </p>
           <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-primary italic">
-            Turning ideas to reality.
+            .
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -119,7 +119,7 @@ function HeroSection() {
               className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg"
             >
               <Link href="/projects">
-                View Our Projects
+                View Projects
                 <IconChevronRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -171,21 +171,36 @@ function AboutSection() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <div className="inline-block bg-primary/20 px-4 py-2 rounded-lg">
-              <h2 className="text-primary font-medium text-sm uppercase tracking-wider">About Us</h2>
+            <div className="inline-block bg-primary/60 px-4 py-2 rounded-lg">
+              <h2 className="text-white font-medium text-sm uppercase tracking-wider">About Us</h2>
             </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold">
-              Signature Homes of Carolina
+            <h2 className="text-3xl md:text-4xl font-helvetica font-bold">
+              Prioritizing Integrity and Craftsmanship.
             </h2>
             <p className="text-lg text-muted-foreground">
-              With over forty years of experience building residential homes, our team is committed to delivering exceptional craftsmanship and personalized service to our clients.
+            At Signature Homes of Carolina we are proud to have assembled an expert team with experience spanning every aspect of the homebuilding process and
+              reflect the company's core values in their everyday lives.
             </p>
-            <p className="text-lg text-muted-foreground">
-              We specialize in custom homes, barndominiums, and renovations throughout the Low Country of South Carolina, bringing your dream home vision to life with quality and care.
-            </p>
+
+              <ul className="text-lg">
+                  <li>⁃ Guidance through choosing a homesite</li>
+                  <li>⁃ Assist with designing a home within your budget</li>
+                  <li>⁃ Draft a fair contract with transparent pricing</li>
+                  <li>⁃ Set realistic expectations</li>
+                  <li>⁃ Guide you through the material selection process</li>
+                  <li>⁃ Designers are available to help guide you through the selections </li>
+                  <li>⁃ Keep communication clear and regular</li>
+                  <li>⁃ Proactively manage your project to minimize stress</li>
+                  <li>⁃ Stay on budget and schedule</li>
+                  <li>⁃ Deliver a quality home</li>
+              </ul>
+
+              <p className="text-2xl text-muted-foreground">
+                We keep it <span className="font-bold text-white">simple</span>, and carefully <span className="font-bold text-white">manage</span> our project capacity so we are here for <span className="font-bold text-primary">YOU</span>, <span className="text-2xl">when you need us.</span>
+              </p>
             <div className="pt-4 grid grid-cols-2 gap-6">
               <div className="flex flex-col space-y-1">
-                <span className="text-3xl font-bold text-primary">40+</span>
+                <span className="text-3xl font-bold text-primary">30+</span>
                 <span className="text-muted-foreground">Years Experience</span>
               </div>
               <div className="flex flex-col space-y-1">
@@ -196,7 +211,7 @@ function AboutSection() {
             <div>
               <Button asChild size="lg" className="mt-4">
                 <Link href="/services">
-                  Discover Our Services
+                  Services
                   <IconArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -212,7 +227,7 @@ function AboutSection() {
               className="relative h-[500px] rounded-lg overflow-hidden shadow-xl"
             >
               <Image
-                src="/placeholder.jpg"
+                src="/images/37.jpg"
                 alt="Custom home construction"
                 fill
                 className="object-cover"
@@ -226,7 +241,7 @@ function AboutSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="absolute -bottom-8 -left-8 bg-background p-5 rounded-lg shadow-lg max-w-[200px]"
             >
-              <div className="font-bold text-xl font-serif mb-2">Expert Builder</div>
+              <div className="font-bold text-xl font-helvetica mb-2">Expert Builder</div>
               <p className="text-sm text-muted-foreground">
                 Led by David Johnson, with over 40 years of experience in residential construction.
               </p>
@@ -283,16 +298,21 @@ function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-block bg-primary/20 px-4 py-2 rounded-lg mb-4">
-            <h2 className="text-primary font-medium text-sm uppercase tracking-wider">Our Services</h2>
+          <div className="inline-block bg-primary/60 px-4 py-2 rounded-lg mb-4">
+            <h2 className="text-white font-medium text-sm uppercase tracking-wider">Signature Services</h2>
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">
-            What We Do Best
+          <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6">
+           What We Do Best
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We specialize in building exceptional custom homes, barndominiums, and renovations that
-            exceed our clients' expectations in quality, craftsmanship, and value.
+            Signature Homes of Carolina stands as a Beacon of excellence in the custom home market, leveraging over thirty years experience to deliver unparalleled quality and craftsmanship. 
+            Our commitment to building distinctive homes that reflect the unique tastes and lifestyles of our clients sets us apart in the industry.
           </p>
+         <p className="mt-4 text-lg text-white max-w-3xl mx-auto">
+           
+            With a deep understanding of architectural design and construction processes, we pride ourselves on our ability to transform visions into reality.
+            In summary, Signature Homes of Carolina is synonymous with excellence in custom home building. Our extensive experience combined with our unwavering commitment to quality ensures that we continue to set the standard in the industry for years to come.
+            </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -310,11 +330,11 @@ function ServicesSection() {
                   <div className="mb-6 p-3 bg-primary/10 rounded-lg w-fit">
                     <service.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-serif font-semibold mb-3">{service.title}</h3>
+                  <h3 className="text-xl font-helvetica font-semibold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground flex-grow">{service.description}</p>
                   <Link
                     href={`/services#${service.id}`}
-                    className="mt-4 inline-flex items-center text-sm font-medium text-primary animated-border"
+                    className="mt-4 inline-flex items-center text-sm font-medium text-primary"
                   >
                     Learn More
                     <IconChevronRight className="ml-1 h-4 w-4" />
@@ -366,10 +386,10 @@ function FeaturedProjectsSection() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <div className="inline-block bg-primary/20 px-4 py-2 rounded-lg mb-4">
-              <h2 className="text-primary font-medium text-sm uppercase tracking-wider">Our Work</h2>
+            <div className="inline-block bg-primary/60 px-4 py-2 rounded-lg mb-4">
+              <h2 className="text-white font-medium text-sm uppercase tracking-wider">Our Work</h2>
             </div>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">
+            <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6">
               Recent Projects
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -415,7 +435,7 @@ function FeaturedProjectsSection() {
                   <p className="text-sm font-medium text-primary/90 mb-1">
                     {project.category}
                   </p>
-                  <h3 className="text-xl font-serif font-semibold">{project.title}</h3>
+                  <h3 className="text-xl font-helvetica font-semibold">{project.title}</h3>
                   <Button
                     asChild
                     variant="ghost"
@@ -445,21 +465,19 @@ function FeaturedProjectsSection() {
           <div className="grid md:grid-cols-3 gap-12 relative z-10">
             <div className="md:col-span-1 flex justify-center">
               <div className="w-48 h-48 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center">
-                <span className="text-6xl font-serif font-bold text-primary">DJ</span>
+                <span className="text-6xl font-helvetica font-bold text-primary">S</span>
               </div>
             </div>
             <div className="md:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">Meet Our Founder</h2>
+              <h2 className="text-2xl md:text-3xl font-helvetica font-bold mb-4">Signature Homes Of Carolina</h2>
               <h3 className="text-xl font-medium text-primary mb-4">David Johnson</h3>
               <p className="text-muted-foreground mb-4">
-                I have over forty years experience building residential homes. I started building in New Jersey and in 2008 I relocated to my home state of South Carolina where I worked for some of the finest builders in Beaufort County as a project manager before I decided to take the plunge and take the test for the residential builders license.
-              </p>
-              <p className="text-muted-foreground mb-4">
-                I have started a new home building company, Signature Homes of Carolina LLC. I will build custom homes, Barndominiums and also renovations.
-              </p>
-              <p className="text-muted-foreground mb-6">
-                I have to say that several of the homes I built for other builders won the coveted Lighthouse Award from the Hilton Head Area Home Builders Association. So, I would be happy to offer my expertise to others!
-              </p>
+                Signature Homes of Carolina stands as a Beacon of excellence in the custom home market, leveraging over thirty years experience to deliver unparalleled quality and craftsmanship. Our commitment to building distinctive homes that reflect the unique tastes and lifestyles of our clients sets us apart in the industry.
+                </p>
+                <p className="text-muted-foreground mb-4">
+With a deep understanding of architectural design and construction processes, we pride ourselves on our ability to transform visions into reality.
+In summary, Signature Homes of Carolina is synonymous with excellence in custom home building. Our extensive experience combined with our unwavering commitment to quality ensures that we continue to set the standard in the industry for years to come.
+</p>
               <Link
                 href="https://www.linkedin.com/in/david-johnson-66104673"
                 target="_blank"
@@ -511,8 +529,8 @@ function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">
-            What Our <span className="text-primary">Clients Say</span>
+          <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6">
+            Client <span className="text-primary">Testomonials</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about working with Signature Homes of Carolina.
@@ -575,8 +593,8 @@ function CtaSection() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6">
-                Ready to Start Your <span className="text-primary">Dream Home</span>?
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-helvetica font-bold mb-6">
+                Thats our <span className="text-primary">Signature</span>?
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Contact us today to schedule a consultation. Let's discuss your vision and turn it

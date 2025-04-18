@@ -27,11 +27,11 @@ const categories = [
 const projectsData = [
   {
     id: 1,
-    title: "Luxury Waterfront Home",
-    category: "custom-homes",
+    title: "Luxury Barndominium",
+    category: "barndominiums",
     description: "Custom-built luxury waterfront home with high-end finishes and panoramic views.",
-    imageUrl: "/placeholder.jpg",
-    completed: "2023",
+    imageUrl: "/images/barn.jpg",
+    completed: "2025",
     location: "Beaufort County, SC",
   },
 ];
@@ -89,7 +89,7 @@ export default function ProjectsPage() {
         <div className="container">
           <motion.h1
             variants={textVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 text-center"
+            className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6 text-center"
           >
             Our <span className="text-primary">Projects</span>
           </motion.h1>
@@ -147,7 +147,7 @@ export default function ProjectsPage() {
           {selectedProject && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-xl md:text-2xl font-serif">
+                <DialogTitle className="text-xl md:text-2xl font-helvetica">
                   {selectedProject.title}
                 </DialogTitle>
                 <DialogDescription>
@@ -232,7 +232,7 @@ function ProjectCard({
                 <div className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-colors duration-300" />
               </div>
               <div className="p-5">
-                <h3 className="text-lg font-serif font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-lg font-helvetica font-semibold mb-2">{project.title}</h3>
                 <p className="text-sm text-muted-foreground line-clamp-2">{project.description}</p>
                 <div className="flex items-center justify-between mt-4">
                   <span className="text-xs text-muted-foreground">{project.location}</span>

@@ -21,7 +21,7 @@ const services = [
     title: "Custom Homes",
     description: "We design and build beautiful custom homes tailored to your unique preferences, needs, and lifestyle in Beaufort County, South Carolina.",
     icon: IconHome2,
-    image: "/placeholder.jpg",
+    image: "/images/37.jpg",
     benefits: [
       "Fully customized floor plans and designs",
       "High-quality materials and craftsmanship",
@@ -34,7 +34,7 @@ const services = [
     title: "Barndominiums",
     description: "Experience the perfect blend of rustic charm and modern living with our custom-designed and built barndominiums, offering spacious, versatile living spaces.",
     icon: IconBuildingWarehouse,
-    image: "/placeholder.jpg",
+    image: "/images/barn.jpg",
     benefits: [
       "Open floor plans with flexible living spaces",
       "Durable metal and steel frame construction",
@@ -47,7 +47,7 @@ const services = [
     title: "Home Renovations",
     description: "Transform your existing space with our comprehensive renovation services. We handle everything from kitchen and bathroom remodels to whole-house transformations with expert craftsmanship.",
     icon: IconTools,
-    image: "/placeholder.jpg",
+    image: "/images/39.jpg",
     benefits: [
       "Complete kitchen and bathroom remodels",
       "Interior and exterior upgrades",
@@ -69,7 +69,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6">
               Our <span className="text-primary">Services</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -101,7 +101,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-helvetica font-bold mb-6">
               Our Construction Expertise
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -150,12 +150,12 @@ export default function ServicesPage() {
             className="bg-primary/10 rounded-xl p-8 md:p-12 grid md:grid-cols-3 gap-8 items-center"
           >
             <div className="md:col-span-1 flex justify-center">
-              <div className="w-40 h-40 bg-primary/20 rounded-full flex items-center justify-center text-primary font-serif text-5xl font-bold">
+              <div className="w-40 h-40 bg-primary/40 rounded-full flex items-center justify-center text-white font-helvetica text-5xl font-bold">
                 DJ
               </div>
             </div>
             <div className="md:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl font-helvetica font-bold mb-4">
                 About David Johnson
               </h2>
               <p className="text-muted-foreground mb-4">
@@ -185,7 +185,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
             className="bg-primary/10 rounded-xl p-8 md:p-12 text-center"
           >
-            <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl font-helvetica font-bold mb-6">
               Ready to Start Your Dream Project?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -232,7 +232,7 @@ function ServiceSection({
             <div className="p-3 bg-primary/10 rounded-lg">
               <service.icon className="h-6 w-6 text-primary" />
             </div>
-            <h2 className="text-3xl font-serif font-bold">{service.title}</h2>
+            <h2 className="text-3xl font-helvetica font-bold">{service.title}</h2>
           </div>
           <p className="text-lg text-muted-foreground">
             {service.description}
