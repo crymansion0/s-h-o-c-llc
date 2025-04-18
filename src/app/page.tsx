@@ -200,7 +200,7 @@ function AboutSection() {
               </p>
             <div className="pt-4 grid grid-cols-2 gap-6">
               <div className="flex flex-col space-y-1">
-                <span className="text-3xl font-bold text-primary">30+</span>
+                <span className="text-3xl font-bold text-primary">40+</span>
                 <span className="text-muted-foreground">Years Experience</span>
               </div>
               <div className="flex flex-col space-y-1">

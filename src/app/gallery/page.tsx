@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils"
 
 // Project data
 const PROJECT_DATA = {
-  name: "Modern Farmhouse Retreat",
+  name: "Luxury Barndominium",
   completionDate: "February 2025",
-  location: "Beaufort County, SC",
+  location: "South Carolina",
   description:
     "Custom home with modern farmhouse elements featuring exposed wooden beams, stone accents, and metal roof.",
 }
@@ -235,13 +235,12 @@ export default function GalleryPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6">{PROJECT_DATA.name}</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6">GALLERY</h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-              {PROJECT_DATA.description}
+              extended project gallery
             </p>
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-primary font-medium">
-              <span>Completed: {PROJECT_DATA.completionDate}</span>
-              <span>Location: {PROJECT_DATA.location}</span>
+              <span>Test</span>
             </div>
           </motion.div>
         </div>
