@@ -304,15 +304,6 @@ function ServicesSection() {
           <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6">
            What We Do Best
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Signature Homes of Carolina stands as a Beacon of excellence in the custom home market, leveraging over thirty years experience to deliver unparalleled quality and craftsmanship. 
-            Our commitment to building distinctive homes that reflect the unique tastes and lifestyles of our clients sets us apart in the industry.
-          </p>
-         <p className="mt-4 text-lg text-white max-w-3xl mx-auto">
-           
-            With a deep understanding of architectural design and construction processes, we pride ourselves on our ability to transform visions into reality.
-            In summary, Signature Homes of Carolina is synonymous with excellence in custom home building. Our extensive experience combined with our unwavering commitment to quality ensures that we continue to set the standard in the industry for years to come.
-            </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -357,21 +348,21 @@ function FeaturedProjectsSection() {
   const featuredProjects = [
     {
       id: 1,
-      title: "Custom Waterfront Home",
+      title: "Project 1",
       category: "Custom Homes",
-      imageUrl: "/placeholder.jpg",
+      imageUrl: "/images/39.jpg",
     },
     {
       id: 2,
-      title: "Modern Barndominium",
+      title: "Project 2",
       category: "Barndominiums",
-      imageUrl: "/placeholder.jpg",
+      imageUrl: "/images/37.jpg",
     },
     {
       id: 3,
-      title: "Complete Home Renovation",
+      title: "Project 3",
       category: "Home Renovations",
-      imageUrl: "/placeholder.jpg",
+      imageUrl: "/images/47.jpg",
     },
   ];
 
@@ -464,13 +455,19 @@ function FeaturedProjectsSection() {
         >
           <div className="grid md:grid-cols-3 gap-12 relative z-10">
             <div className="md:col-span-1 flex justify-center">
-              <div className="w-48 h-48 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center">
-                <span className="text-6xl font-helvetica font-bold text-primary">S</span>
-              </div>
+ <div className="w-[200px] h-[300px] md:w-[500px] md:h-[300px] flex items-center justify-center mx-auto mb-5 relative">
+            <Image
+              src="/logo.png"
+              alt="Signature Homes of Carolina Logo"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
             </div>
             <div className="md:col-span-2">
               <h2 className="text-2xl md:text-3xl font-helvetica font-bold mb-4">Signature Homes Of Carolina</h2>
-              <h3 className="text-xl font-medium text-primary mb-4">David Johnson</h3>
+              <h3 className="text-xl font-medium text-primary mb-4">Low Country, SC</h3>
               <p className="text-muted-foreground mb-4">
                 Signature Homes of Carolina stands as a Beacon of excellence in the custom home market, leveraging over thirty years experience to deliver unparalleled quality and craftsmanship. Our commitment to building distinctive homes that reflect the unique tastes and lifestyles of our clients sets us apart in the industry.
                 </p>
