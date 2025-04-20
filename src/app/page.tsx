@@ -109,9 +109,6 @@ function HeroSection() {
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-3 text-white/90">
             Building dream homes in the Low Country of South Carolina.
           </p>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-primary italic">
-            .
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
@@ -527,7 +524,7 @@ function TestimonialsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6">
-            Client <span className="text-primary">Testomonials</span>
+            Client <span className="text-primary">Testimonials</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about working with Signature Homes of Carolina.
