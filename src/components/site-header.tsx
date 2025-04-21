@@ -21,22 +21,18 @@ const navigationItems = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false); // <-- added state for Sheet
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLinkClick = () => setOpen(false); // <-- close sheet on link click
 
   return (
     <header
@@ -55,7 +51,6 @@ export function SiteHeader() {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            {/* Logo */}
             <div className="h-12 w-40 relative">
               <Image
                 src="/logo.png"
@@ -64,7 +59,6 @@ export function SiteHeader() {
                 className="object-contain"
                 unoptimized
               />
-
             </div>
           </motion.div>
         </Link>
@@ -109,7 +103,7 @@ export function SiteHeader() {
         </nav>
 
         {/* Mobile Navigation */}
-        <Sheet>
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild className="md:hidden">
             <Button size="icon" variant="ghost">
               <IconMenu2 className="h-5 w-5" />
@@ -131,6 +125,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={handleLinkClick}
                   className={cn(
                     "text-lg transition-colors hover:text-primary",
                     pathname === item.href
@@ -142,7 +137,7 @@ export function SiteHeader() {
                 </Link>
               ))}
               <Button asChild className="mt-4">
-                <Link href="/contact">
+                <Link href="/contact" onClick={handleLinkClick}>
                   <IconPhone className="mr-2 h-4 w-4" />
                   Call Now
                 </Link>

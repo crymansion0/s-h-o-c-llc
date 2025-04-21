@@ -9,11 +9,14 @@ import {
   IconBrandInstagram,
   IconMail,
   IconMapPin,
-  IconPhone
+  IconPhone,
+  IconCheck, // Import IconCheck for the success animation
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export function SiteFooter() {
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const currentYear = new Date().getFullYear();
 
   const footerAnimation = {
@@ -23,29 +26,28 @@ export function SiteFooter() {
       y: 0,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemAnimation = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   };
-
 
   // Handle form submission to Netlify
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    
+
     // Netlify form submission requires a hidden field with the form name
     const formData = new FormData(form);
     const formAction = form.action;
-    
+
     try {
       const response = await fetch(formAction, {
-        method: 'POST',
+        method: "POST",
         body: formData,
       });
 
@@ -56,10 +58,10 @@ export function SiteFooter() {
           form.reset();
         }, 3000);
       } else {
-        alert('There was an issue with the submission. Please try again.');
+        alert("There was an issue with the submission. Please try again.");
       }
     } catch (error) {
-      alert('There was an issue with the submission. Please try again.');
+      alert("There was an issue with the submission. Please try again.");
     }
   };
 
@@ -151,6 +153,12 @@ export function SiteFooter() {
                 Projects
               </Link>
               <Link
+                href="/gallery"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm"
+              >
+                Gallery
+              </Link>
+              <Link
                 href="/contact"
                 className="text-muted-foreground hover:text-primary transition-colors text-sm"
               >
@@ -212,17 +220,37 @@ export function SiteFooter() {
               Get In Touch
             </motion.h3>
             <motion.div variants={itemAnimation} className="space-y-3">
-            <form
-                    onSubmit={handleSubmit}
-                    name="message" // This is important for Netlify
-                    method="POST"
-                    data-netlify="true" // Enables Netlify Form handling
-                    className="space-y-6"
-                  >
-              <Input type="email" placeholder="Email" className="bg-card border-border" />
-              <Textarea placeholder="Message" className="h-24 bg-card border-border" />
-              <Button className="w-full">Send Message</Button>
-              </form>
+              {formSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-primary/10 p-6 rounded-lg text-center"
+                >
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground mb-4">
+                    <IconCheck className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Message Sent!</h3>
+                  <p className="text-muted-foreground">
+                    Thank you for contacting us. We'll get back to you shortly.
+                  </p>
+                </motion.div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  name="message" // This is important for Netlify
+                  method="POST"
+                  data-netlify="true" // Enables Netlify Form handling
+                  className="space-y-6"
+                >
+                  {/* Hidden input for Netlify form name */}
+                  <input type="hidden" name="form-name" value="message" />
+                  <Input type="email" placeholder="Email" className="bg-card border-border" />
+                  <Textarea placeholder="Message" className="h-24 bg-card border-border" />
+                  <Button className="w-full" type="submit" disabled={formSubmitted}>
+                    {formSubmitted ? "Message Sent" : "Send Message"}
+                  </Button>
+                </form>
+              )}
             </motion.div>
           </motion.div>
         </div>
@@ -233,9 +261,7 @@ export function SiteFooter() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="mt-16 pt-6 border-t border-border text-center text-sm text-muted-foreground"
         >
-          <p>
-            © {currentYear} Signature Homes of Carolina LLC. All rights reserved.
-          </p>
+          <p>© {currentYear} Signature Homes of Carolina LLC. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>
