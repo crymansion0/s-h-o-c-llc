@@ -235,12 +235,9 @@ export default function GalleryPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6">GALLERY</h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-              extended project gallery
-            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6">Gallery</h1>
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-primary font-medium">
-              <span>Test</span>
+              <span>An extended project gallery of previous projects.</span>
             </div>
           </motion.div>
         </div>

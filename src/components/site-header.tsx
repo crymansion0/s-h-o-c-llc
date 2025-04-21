@@ -119,7 +119,7 @@ export function SiteHeader() {
           <SheetContent className="w-[300px] sm:w-[400px]">
             <div className="h-12 w-48 relative mb-8">
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="Signature Homes of Carolina Logo"
                 fill
                 className="object-contain"

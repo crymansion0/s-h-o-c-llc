@@ -98,7 +98,7 @@ export default function ProjectsPage() {
             className="text-lg md:text-xl text-muted-foreground text-center max-w-3xl mx-auto"
           >
             Explore our portfolio of exceptional custom homes, barndominiums, and renovations throughout
-            Low Country, South Carolina.
+            Beaufort County, South Carolina.
           </motion.p>
         </div>
       </motion.section>

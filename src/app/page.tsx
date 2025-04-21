@@ -109,6 +109,9 @@ function HeroSection() {
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-3 text-white/90">
             Building dream homes in the Low Country of South Carolina.
           </p>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-primary italic">
+            .
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
@@ -197,7 +200,7 @@ function AboutSection() {
               </p>
             <div className="pt-4 grid grid-cols-2 gap-6">
               <div className="flex flex-col space-y-1">
-                <span className="text-3xl font-bold text-primary">40+</span>
+                <span className="text-3xl font-bold text-primary">30+</span>
                 <span className="text-muted-foreground">Years Experience</span>
               </div>
               <div className="flex flex-col space-y-1">
@@ -240,7 +243,7 @@ function AboutSection() {
             >
               <div className="font-bold text-xl font-helvetica mb-2">Expert Builder</div>
               <p className="text-sm text-muted-foreground">
-                Led by David Johnson, with over 40 years of experience in residential construction.
+                Led by David Johnson, with over 30 years of experience in residential construction.
               </p>
             </motion.div>
           </div>
@@ -473,12 +476,12 @@ With a deep understanding of architectural design and construction processes, we
 In summary, Signature Homes of Carolina is synonymous with excellence in custom home building. Our extensive experience combined with our unwavering commitment to quality ensures that we continue to set the standard in the industry for years to come.
 </p>
               <Link
-                href="https://www.linkedin.com/in/david-johnson-66104673"
+                href="/contact"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-primary hover:underline"
               >
-                View LinkedIn Profile
+                Book a consultation
                 <IconArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -524,7 +527,7 @@ function TestimonialsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6">
-            Client <span className="text-primary">Testimonials</span>
+            Client <span className="text-primary">Testomonials</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about working with Signature Homes of Carolina.

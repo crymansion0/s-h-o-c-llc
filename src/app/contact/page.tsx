@@ -17,6 +17,8 @@ import {
   IconCheck
 } from "@tabler/icons-react";
 
+import Image from "next/image"; // Correct way to import Image component
+
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -37,20 +39,27 @@ export default function ContactPage() {
   return (
     <div className="pt-24 pb-16">
       {/* Hero Section */}
-      <section className="bg-muted py-16 md:py-24 mb-12">
+      <section className="relative py-16 md:py-24 mb-12 bg-muted">
+        <div className="absolute inset-0 bg-black/75 z-10" />
+        <Image
+          src="/images/cover.jpg"
+          fill
+          className="object-cover"
+          priority
+          unoptimized
+        />
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center relative z-10"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6 text-white">
               Contact <span className="text-primary">Us</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to start your next construction or renovation project?
-              Get in touch with our team for a consultation.
+            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
+              Ready to start your next construction or renovation project? Get in touch with our team for a consultation.
             </p>
           </motion.div>
         </div>
@@ -67,7 +76,7 @@ export default function ContactPage() {
           >
             <Card className="border-border overflow-hidden">
               <CardContent className="p-8">
-                <h2 className="text-2xl font-serif font-bold mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-helvetica font-bold mb-6">Send Us a Message</h2>
                 <p className="text-muted-foreground mb-8">
                   Fill out the form below and our team will get back to you as soon as possible.
                 </p>
@@ -87,7 +96,7 @@ export default function ContactPage() {
                     </p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6" name="contact" netlify>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
@@ -134,7 +143,9 @@ export default function ContactPage() {
                     <Button type="submit" className="w-full">Send Message</Button>
                   </form>
                 )}
+
               </CardContent>
+
             </Card>
           </motion.div>
 
@@ -146,7 +157,7 @@ export default function ContactPage() {
             className="space-y-8"
           >
             <div>
-              <h2 className="text-2xl font-serif font-bold mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-helvetica font-bold mb-6">Contact Information</h2>
               <p className="text-muted-foreground mb-8">
                 You can reach us through any of the methods below. We look forward to discussing your project.
               </p>
@@ -166,7 +177,7 @@ export default function ContactPage() {
               <ContactInfoItem
                 icon={IconMail}
                 title="Email"
-                details={["signaturehomesofcarolina2023@gmail.com"]}
+                details={["signaturehomesofcarolina2023@gmail.com", "shcbuilder2023@gmail.com"]}
               />
               <ContactInfoItem
                 icon={IconClockHour8}
@@ -174,6 +185,7 @@ export default function ContactPage() {
                 details={["Monday - Friday: 8:00 AM - 5:00 PM", "Saturday: By appointment"]}
               />
             </div>
+
 
             <div className="pt-4">
               <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
@@ -208,7 +220,7 @@ export default function ContactPage() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-serif font-bold mb-6">Our Location</h2>
+          <h2 className="text-2xl font-helvetica font-bold mb-6">Our Location</h2>
           <div className="w-full h-[400px] bg-muted rounded-lg overflow-hidden relative">
             {/* In a real implementation, you'd use a proper map component/iframe */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -230,7 +242,7 @@ export default function ContactPage() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center mb-16"
         >
-          <h2 className="text-2xl font-serif font-bold mb-6">Service Area</h2>
+          <h2 className="text-2xl font-helvetica font-bold mb-6">Service Area</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto">
             We provide custom home building, barndominium construction, and renovation services throughout
             the Low Country of South Carolina. Contact us to discuss your project and schedule a consultation.
