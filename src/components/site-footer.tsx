@@ -244,8 +244,8 @@ export function SiteFooter() {
                 >
                   {/* Hidden input for Netlify form name */}
                   <input type="hidden" name="form-name" value="message" />
-                  <Input type="email" placeholder="Email" className="bg-card border-border" />
-                  <Textarea placeholder="Message" className="h-24 bg-card border-border" />
+                  <Input type="email" placeholder="Email" name="Email:" className="bg-card border-border" />
+                  <Textarea placeholder="Message" name="Message:"className="h-24 bg-card border-border" />
                   <Button className="w-full" type="submit" disabled={formSubmitted}>
                     {formSubmitted ? "Message Sent" : "Send Message"}
                   </Button>
