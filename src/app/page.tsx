@@ -527,7 +527,7 @@ function TestimonialsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6">
-            Client <span className="text-primary">Testomonials</span>
+            Client <span className="text-primary">Testimonials</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say about working with Signature Homes of Carolina.
