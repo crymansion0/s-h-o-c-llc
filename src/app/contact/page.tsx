@@ -140,12 +140,15 @@ export default function ContactPage() {
                         required
                       />
                     </div>
+
+                    {/* Hidden Input for Netlify */}
+                    <input type="hidden" name="form-name" value="contact" />
+
                     <Button type="submit" className="w-full">Send Message</Button>
                   </form>
                 )}
 
               </CardContent>
-
             </Card>
           </motion.div>
 
@@ -185,7 +188,6 @@ export default function ContactPage() {
                 details={["Monday - Friday: 8:00 AM - 5:00 PM", "Saturday: By appointment"]}
               />
             </div>
-
 
             <div className="pt-4">
               <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
