@@ -33,6 +33,36 @@ export function SiteFooter() {
     visible: { opacity: 1, y: 0 }
   };
 
+
+  // Handle form submission to Netlify
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    
+    // Netlify form submission requires a hidden field with the form name
+    const formData = new FormData(form);
+    const formAction = form.action;
+    
+    try {
+      const response = await fetch(formAction, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        setTimeout(() => {
+          setFormSubmitted(false);
+          form.reset();
+        }, 3000);
+      } else {
+        alert('There was an issue with the submission. Please try again.');
+      }
+    } catch (error) {
+      alert('There was an issue with the submission. Please try again.');
+    }
+  };
+
   return (
     <footer className="bg-muted border-t border-border overflow-hidden">
       <div className="container section-padding">
@@ -182,9 +212,17 @@ export function SiteFooter() {
               Get In Touch
             </motion.h3>
             <motion.div variants={itemAnimation} className="space-y-3">
+            <form
+                    onSubmit={handleSubmit}
+                    name="message" // This is important for Netlify
+                    method="POST"
+                    data-netlify="true" // Enables Netlify Form handling
+                    className="space-y-6"
+                  >
               <Input type="email" placeholder="Email" className="bg-card border-border" />
               <Textarea placeholder="Message" className="h-24 bg-card border-border" />
               <Button className="w-full">Send Message</Button>
+              </form>
             </motion.div>
           </motion.div>
         </div>

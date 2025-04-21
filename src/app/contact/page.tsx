@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image"; // Correct way to import Image component
 import {
   IconMapPin,
   IconPhone,
@@ -16,6 +17,7 @@ import {
   IconBrandInstagram,
   IconCheck
 } from "@tabler/icons-react";
+
 
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -52,7 +54,7 @@ export default function ContactPage() {
   return (
     <div className="pt-24 pb-16">
       {/* Hero Section */}
-      <section className="bg-muted py-16 md:py-24 mb-12">
+      <section className="relative py-16 md:py-24 mb-12 bg-muted">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -69,6 +71,7 @@ export default function ContactPage() {
             </p>
           </motion.div>
         </div>
+
       </section>
 
       {/* Contact Content */}
