@@ -591,7 +591,7 @@ function CtaSection() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-helvetica font-bold mb-6">
-                Thats our <span className="text-primary">Signature</span>?
+                Thats our <span className="text-primary">Signature</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Contact us today to schedule a consultation. Let's discuss your vision and turn it
