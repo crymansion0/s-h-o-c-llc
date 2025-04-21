@@ -17,49 +17,55 @@ import {
   IconCheck
 } from "@tabler/icons-react";
 
-import Image from "next/image"; // Correct way to import Image component
-
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Handle form submission to Netlify
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real implementation, this would submit the form to a backend
-    setFormSubmitted(true);
+    const form = e.target as HTMLFormElement;
+    
+    // Netlify form submission requires a hidden field with the form name
+    const formData = new FormData(form);
+    const formAction = form.action;
+    
+    try {
+      const response = await fetch(formAction, {
+        method: 'POST',
+        body: formData,
+      });
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-      // Reset form fields
-      const form = e.target as HTMLFormElement;
-      form.reset();
-    }, 3000);
+      if (response.ok) {
+        setFormSubmitted(true);
+        setTimeout(() => {
+          setFormSubmitted(false);
+          form.reset();
+        }, 3000);
+      } else {
+        alert('There was an issue with the submission. Please try again.');
+      }
+    } catch (error) {
+      alert('There was an issue with the submission. Please try again.');
+    }
   };
 
   return (
     <div className="pt-24 pb-16">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 mb-12 bg-muted">
-        <div className="absolute inset-0 bg-black/75 z-10" />
-        <Image
-          src="/images/cover.jpg"
-          fill
-          className="object-cover"
-          priority
-          unoptimized
-        />
+      <section className="bg-muted py-16 md:py-24 mb-12">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center relative z-10"
+            className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6 text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6">
               Contact <span className="text-primary">Us</span>
             </h1>
-            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
-              Ready to start your next construction or renovation project? Get in touch with our team for a consultation.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              Ready to start your next construction or renovation project?
+              Get in touch with our team for a consultation.
             </p>
           </motion.div>
         </div>
@@ -96,30 +102,38 @@ export default function ContactPage() {
                     </p>
                   </motion.div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6" name="contact" netlify>
+                  <form
+                    onSubmit={handleSubmit}
+                    name="contact" // This is important for Netlify
+                    method="POST"
+                    data-netlify="true" // Enables Netlify Form handling
+                    action="/success" // Redirect after successful submission (optional)
+                    className="space-y-6"
+                  >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" placeholder="John" required />
+                        <Input id="firstName" name="firstName" placeholder="John" required />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" placeholder="Doe" required />
+                        <Input id="lastName" name="lastName" placeholder="Doe" required />
                       </div>
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" placeholder="john.doe@example.com" required />
+                      <Input id="email" name="email" type="email" placeholder="john.doe@example.com" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone</Label>
-                      <Input id="phone" type="tel" placeholder="(123) 456-7890" />
+                      <Input id="phone" name="phone" type="tel" placeholder="(123) 456-7890" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="projectType">Project Type</Label>
                       <select
                         id="projectType"
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        name="projectType"
+                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background"
                         defaultValue=""
                       >
                         <option value="" disabled>Select a project type</option>
@@ -135,19 +149,15 @@ export default function ContactPage() {
                       <Label htmlFor="message">Message</Label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder="Tell us about your project..."
                         className="min-h-[120px]"
                         required
                       />
                     </div>
-
-                    {/* Hidden Input for Netlify */}
-                    <input type="hidden" name="form-name" value="contact" />
-
                     <Button type="submit" className="w-full">Send Message</Button>
                   </form>
                 )}
-
               </CardContent>
             </Card>
           </motion.div>
@@ -224,7 +234,6 @@ export default function ContactPage() {
         >
           <h2 className="text-2xl font-helvetica font-bold mb-6">Our Location</h2>
           <div className="w-full h-[400px] bg-muted rounded-lg overflow-hidden relative">
-            {/* In a real implementation, you'd use a proper map component/iframe */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
                 <IconMapPin className="h-12 w-12 text-primary mb-4 mx-auto" />
@@ -235,20 +244,6 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </motion.div>
-
-        {/* Service Area */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-2xl font-helvetica font-bold mb-6">Service Area</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            We provide custom home building, barndominium construction, and renovation services throughout
-            the Low Country of South Carolina. Contact us to discuss your project and schedule a consultation.
-          </p>
         </motion.div>
       </div>
     </div>
