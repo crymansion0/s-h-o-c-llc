@@ -197,14 +197,6 @@ export function SiteFooter() {
               >
                 Home Renovations
               </Link>
-              <Link
-                href="https://www.linkedin.com/in/david-johnson-66104673"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors text-sm"
-              >
-                About David Johnson
-              </Link>
             </motion.nav>
           </motion.div>
 
