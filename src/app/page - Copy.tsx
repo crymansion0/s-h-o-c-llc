@@ -69,7 +69,7 @@ function HeroSection() {
         className="absolute inset-0 z-0"
         style={{ y, opacity }}
       >
-        <div className="absolute inset-0 bg-black/75 z-10" />
+        <div className="absolute inset-0 bg-black/65 z-10" />
         <Image
           src="/images/cover.jpg"
           alt="Luxury home exterior"
@@ -130,7 +130,7 @@ function HeroSection() {
     </div>
   </motion.div>
 
- <div className="flex pt-8 justify-center">
+  <div className="absolute bottom-8 left-0 right-0 flex justify-center">
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -172,10 +172,22 @@ function AboutSection() {
               Prioritizing Integrity and Craftsmanship.
             </h2>
             <p className="text-lg text-muted-foreground">
-            At Signature Homes of Carolina, we craft more than homes — we bring your dream to life. Whether you envision a modern barndominium built to withstand the test of time. From start to finish, we’re by your side — listening, guiding, and delivering.
-
+            At Signature Homes of Carolina we are proud to have assembled an expert team with experience spanning every aspect of the homebuilding process and
+              reflect the company's core values in their everyday lives.
             </p>
 
+              <ul className="text-lg">
+                  <li>⁃ Guidance through choosing a homesite</li>
+                  <li>⁃ Assist with designing a home within your budget</li>
+                  <li>⁃ Draft a fair contract with transparent pricing</li>
+                  <li>⁃ Set realistic expectations</li>
+                  <li>⁃ Guide you through the material selection process</li>
+                  <li>⁃ Designers are available to help guide you through the selections </li>
+                  <li>⁃ Keep communication clear and regular</li>
+                  <li>⁃ Proactively manage your project to minimize stress</li>
+                  <li>⁃ Stay on budget and schedule</li>
+                  <li>⁃ Deliver a quality home</li>
+              </ul>
 
               <p className="text-2xl text-muted-foreground">
                 We keep it <span className="font-bold text-white">simple</span>, and carefully <span className="font-bold text-white">manage</span> our project capacity so we are here for <span className="font-bold text-primary">YOU</span>, <span className="text-2xl">when you need us.</span>
@@ -428,170 +440,109 @@ function FeaturedProjectsSection() {
 
 {/* Owner Profile Section */}
 <div className="container mt-32">
-  {/* Section Badge */}
-  <div className="flex justify-center mb-10">
-    <div className="bg-primary/80 px-6 py-2 rounded-lg shadow text-white text-sm font-semibold tracking-wider uppercase">
-      More About Us
-    </div>
-  </div>
-
-{/* Main Glass Panel */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.3 }}
-  transition={{ duration: 0.8 }}
-  className="bg-muted/70 backdrop-blur-xl border border-border rounded-3xl p-6 md:p-16 shadow-xl"
->
-  <div className="grid md:grid-cols-2 gap-12 text-left">
-    {/* Left Column */}
-    <div>
-      <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-        How We Operate
-      </h2>
-      <p className="text-muted-foreground mb-8 max-w-prose leading-relaxed">
-        At Signature Homes of Carolina, we believe in character, not copies. No cookie-cutter builds — only thoughtful, heart-driven craftsmanship and trusted relationships.
-      </p>
-
-      <div className="space-y-6">
-        {[
-          {
-            icon: "📋",
-            title: "Initial Consultation & Homesite Selection",
-            desc: "We begin by understanding your vision and budget, then help secure the ideal homesite."
-          },
-          {
-            icon: "✍️",
-            title: "Design Collaboration Within Your Budget",
-            desc: "We create a home that fits your lifestyle and budget — without sacrificing quality."
-          },
-          {
-            icon: "📑",
-            title: "Transparent Contracting & Realistic Expectations",
-            desc: "We’re upfront about costs and timelines to keep things clear and stress-free."
-          },
-          {
-            icon: "🧱",
-            title: "Material Selection with Expert Guidance",
-            desc: "We guide you in picking durable, low-maintenance finishes that match your style."
-          },
-          {
-            icon: "📞",
-            title: "Clear Communication Throughout",
-            desc: "You’ll always know what’s happening — no surprises, just consistent updates."
-          },
-          {
-            icon: "📆",
-            title: "Proactive Project Management",
-            desc: "We manage every detail to keep your build on time and within budget."
-          },
-          {
-            icon: "🏅",
-            title: "Quality Craftsmanship Delivered",
-            desc: "With 40+ years of experience, we deliver homes built to the highest standards."
-          }
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            className="bg-muted/90 border border-border/40 backdrop-blur-lg rounded-xl p-5 shadow-sm hover:shadow-md transition-all"
-          >
-            <div className="flex items-start gap-3">
-              <div className="text-2xl">{item.icon}</div>
-              <div>
-                <h3 className="text-lg font-semibold text-primary mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    {/* Right Column */}
-    <div>
-      <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-        Why Are We Different
-      </h2>
-      <p className="text-muted-foreground mb-8 max-w-prose leading-relaxed">
-        At Signature Homes of Carolina, we don’t believe in cookie-cutter homes — we believe in craftsmanship with character, homes with heart, and partnerships built on trust. Here’s what makes us stand out:
-      </p>
-
-      <div className="space-y-6">
-        {[
-          {
-            icon: "🏆",
-            title: "Built on Experience, Backed by Awards",
-            desc: "Founder David Johnson brings 40+ years and multiple Lighthouse Awards to your build."
-          },
-          {
-            icon: "🌪️",
-            title: "Hurricane-Ready, Coastal Strong",
-            desc: "We build with storm-resistant materials to ensure long-term coastal resilience."
-          },
-          {
-            icon: "🌿",
-            title: "Low-Maintenance, Sustainable Materials",
-            desc: "We use efficient, eco-friendly materials that look great and last longer."
-          },
-          {
-            icon: "🏗️",
-            title: "Custom Homes & Barndominiums (Barndos)",
-            desc: "From modern barndos to classic homes — every build is custom to your vision."
-          },
-          {
-            icon: "🤝",
-            title: "True Partnership from Start to Finish",
-            desc: "We’re with you from day one — responsive, proactive, and invested in your success."
-          },
-          {
-            icon: "📣",
-            title: "Communication You Can Count On",
-            desc: "We keep you in the loop, set expectations clearly, and answer every question."
-          }
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            className="bg-muted/90 border border-border/40 backdrop-blur-lg rounded-xl p-5 shadow-sm hover:shadow-md transition-all"
-          >
-            <div className="flex items-start gap-3">
-              <div className="text-2xl">{item.icon}</div>
-              <div>
-                <h3 className="text-lg font-semibold text-primary mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
+<div className="inline-flex bg-primary/60 px-4 py-2 rounded-lg mb-4 justify-center items-center">
+  <h2 className="text-white font-medium text-sm uppercase tracking-wider">MORE ABOUT US</h2>
+</div>
 
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.3 }}
     transition={{ duration: 0.8 }}
-    className="text-center mb-12"
+    className="bg-muted rounded-2xl p-8 md:p-12 relative overflow-hidden"
   >
-    <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6 mt-8">
-      The <span className="text-primary">Signature</span> Difference?
-    </h2>
-    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-      We build homes that are strong, smart, and sustainable — and we treat our clients like family. That’s the Signature Homes of Carolina promise.
-    </p>
+
+
+    <div className="grid md:grid-cols-2 gap-12 relative z-10 text-center">
+      
+
+      {/* Left Column - "Why We Are Different" Section */}
+      <div className="md:col-span-1">
+
+        <h2 className="text-2xl md:text-4xl font-helvetica font-bold mb-6">
+          Why We Are Different
+        </h2>
+        <p className="text-muted-foreground mb-4">
+          At Signature Homes of Carolina, we don’t believe in cookie-cutter homes — we believe in craftsmanship with character, homes with heart, and partnerships built on trust. Here’s what makes us stand out:
+        </p>
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-medium text-primary">🛠️ Built on Experience, Backed by Awards</h3>
+            <p className="text-muted-foreground">
+              With over 40 years of residential construction experience, founder David Johnson has built a legacy of quality. Many of the homes he led as a project manager have received the Lighthouse Award from the Hilton Head Area Home Builders Association — and he now brings that same expertise and personal attention directly to your custom project.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-primary">🏡 Hurricane-Ready, Coastal Strong</h3>
+            <p className="text-muted-foreground">
+              We don’t just build homes — we build peace of mind. Every project is designed with the Carolina coast in mind, using materials and methods that enhance safety, durability, and resilience. Whether it’s a traditional home or a steel-framed barndominium, your structure will be built to weather the storm.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-primary">🌱 Low-Maintenance, Sustainable Materials</h3>
+            <p className="text-muted-foreground">
+              We specialize in sustainable, low-maintenance materials that are beautiful, efficient, and long-lasting. You’ll spend less time on upkeep and more time enjoying your home — the way it should be.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-primary">🏗️ Custom Homes & Barndominiums (Barndos)</h3>
+            <p className="text-muted-foreground">
+              We build what you dream — from timeless stick-built homes to bold, modern barndominiums. Each project is tailored to your lifestyle, aesthetic, and budget. Want smart home tech? Great. Prefer something simple and grounded? We can do that too.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-primary">🤝 True Partnership from Start to Finish</h3>
+            <p className="text-muted-foreground">
+              We walk with you through the entire journey — from lot selection and design through construction and final walkthrough. Our team is known for being proactive, responsive, and helpful at every step. You're never just a project. You're a partner.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-primary">💬 Communication You Can Count On</h3>
+            <p className="text-muted-foreground">
+              Clarity and transparency are cornerstones of our approach. We keep you informed, set clear expectations, and make sure your questions are always answered.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Column - "Meet the Team" Section */}
+      <div className="md:col-span-1">
+        <h2 className="text-2xl md:text-4xl font-helvetica font-bold mb-6">
+          Meet the Team Behind Your Dream
+        </h2>
+        <p className="text-muted-foreground mb-4">
+          At Signature Homes of Carolina, our team isn’t just the people wearing toolbelts or drawing blueprints — it’s everyone who plays a role in bringing your home to life.
+        </p>
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-medium text-primary">Led by Experience. Driven by Passion.</h3>
+            <p className="text-muted-foreground">
+              It starts with David Johnson, our founder and builder-in-chief, who brings over 40 years of experience and award-winning craftsmanship to every project. His hands-on leadership and deep knowledge of coastal construction guide the process from concept to completion.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-primary">A True Partnership</h3>
+            <p className="text-muted-foreground">
+              But we don’t do it alone. You, the homeowner, are a vital part of the team. We believe in a true partnership — listening to your ideas, understanding your needs, and making sure you're informed and confident at every step.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-primary">Supported by Local Experts</h3>
+            <p className="text-muted-foreground">
+              Behind the scenes, our work is supported by a network of trusted local vendors, tradespeople, and craftsmen who share our commitment to quality and excellence. These long-standing relationships mean better materials, tighter timelines, and results you can count on.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-medium text-primary">More Than Homes — We Build Relationships</h3>
+            <p className="text-muted-foreground">
+              Together, we build more than homes — we build relationships, trust, and a finished product that everyone is proud to put their name on.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </motion.div>
-</motion.div>
-
 </div>
-
 
     </section>
   );
@@ -696,12 +647,11 @@ function CtaSection() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-helvetica font-bold mb-6">
-                Let’s Build <span className="text-primary">Your</span> Future Home
+                Thats our <span className="text-primary">Signature</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Ready to bring your vision to life? Let’s talk.
-                Whether you're starting from scratch or reimagining your current home,
-                 Signature Homes of Carolina is here to guide you — every step of the way.
+                Contact us today to schedule a consultation. Let's discuss your vision and turn it
+                into reality with our expert craftsmanship and attention to detail.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg">

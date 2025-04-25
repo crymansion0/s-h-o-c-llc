@@ -164,6 +164,12 @@ export function SiteFooter() {
               >
                 Contact
               </Link>
+              <Link
+                href="/about"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm"
+              >
+                About
+              </Link>
             </motion.nav>
           </motion.div>
 

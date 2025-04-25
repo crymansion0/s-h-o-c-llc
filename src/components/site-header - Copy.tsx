@@ -16,7 +16,6 @@ const navigationItems = [
   { title: "Projects", href: "/projects" },
   { title: "Gallery", href: "/gallery" },
   { title: "Contact", href: "/contact" },
-  { title: "About", href: "/about"},
 ];
 
 export function SiteHeader() {
@@ -89,7 +88,18 @@ export function SiteHeader() {
               </motion.div>
             );
           })}
-
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <Button asChild variant="default" size="sm" className="ml-4">
+              <Link href="/contact" className="font-medium">
+                <IconPhone className="mr-2 h-4 w-4" />
+                Call Now
+              </Link>
+            </Button>
+          </motion.div>
         </nav>
 
         {/* Mobile Navigation */}

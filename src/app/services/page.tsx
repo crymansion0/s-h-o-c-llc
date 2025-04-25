@@ -19,7 +19,7 @@ const services = [
   {
     id: "custom-homes",
     title: "Custom Homes",
-    description: "We design and build beautiful custom homes tailored to your unique preferences, needs, and lifestyle in Beaufort County, South Carolina.",
+    description: "Your home should be as unique as you are. Whether you’re drawn to the charm of a Lowcountry cottage or the bold lines of a modern build, we create fully custom homes designed around your vision. Choose from traditional stick-built construction or explore the strength and style of metal builds.",
     icon: IconHome2,
     image: "/images/37.jpg",
     benefits: [
@@ -32,7 +32,7 @@ const services = [
   {
     id: "barndominiums",
     title: "Barndominiums",
-    description: "Experience the perfect blend of rustic charm and modern living with our custom-designed and built barndominiums, offering spacious, versatile living spaces.",
+    description: "Blending rustic appeal with modern efficiency, our barndominiums are a smart, durable choice — especially in hurricane-prone areas. Built with metal framing and sustainable materials, these structures are low-maintenance, energy-efficient, and fully customizable for any lifestyle.",
     icon: IconBuildingWarehouse,
     image: "/images/barn.jpg",
     benefits: [
@@ -44,8 +44,8 @@ const services = [
   },
   {
     id: "renovations",
-    title: "Home Renovations",
-    description: "Transform your existing space with our comprehensive renovation services. We handle everything from kitchen and bathroom remodels to whole-house transformations with expert craftsmanship.",
+    title: "Renovations & Additions",
+    description: "Love where you live but want to make it better? From kitchen makeovers to whole-home renovations, we transform outdated spaces into beautiful, functional living environments — always with an eye on quality, craftsmanship, and comfort.",
     icon: IconTools,
     image: "/images/39.jpg",
     benefits: [
@@ -72,9 +72,18 @@ export default function ServicesPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6">
               Our <span className="text-primary">Services</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              We provide exceptional custom home building and renovation services in Beaufort County, South Carolina, with a focus on quality, reliability, and customer satisfaction.
+            <p className="text-2xl md:text-x1 text-muted-foreground max-w-3xl mx-auto mb-12">
+              What We Build, We Build to Last
             </p>
+            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-4">
+              At Signature Homes of Carolina, every project starts with a conversation — 
+              and ends with a home that’s tailor-made for the way you live.
+               Whether you're building from the ground up or reimagining the space you're in, we bring craftsmanship, care, and decades of experience to every square foot.
+            </p>
+            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
+From custom homes to barndominiums, renovations to hurricane-ready builds, our services are designed to meet your needs today and stand strong for tomorrow. We specialize in low-maintenance, sustainable materials and partner with you every step of the way — ensuring your vision is not only built, but built right.
+            </p>
+
           </motion.div>
         </div>
       </section>
