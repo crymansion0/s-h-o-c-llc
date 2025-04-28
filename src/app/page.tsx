@@ -61,94 +61,95 @@ function HeroSection() {
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className="relative h-screen text-white overflow-hidden"
+ <section
+  ref={containerRef}
+  className="relative min-h-screen text-white overflow-hidden"
+>
+  <motion.div className="absolute inset-0 z-0" style={{ y, opacity }}>
+    <div className="absolute inset-0 bg-black/75 z-10" />
+    <Image
+      src="/images/cover.jpg"
+      alt="Luxury home exterior"
+      fill
+      className="object-cover"
+      priority
+      unoptimized
+    />
+  </motion.div>
+
+  <div className="relative z-10 flex flex-col justify-center items-center text-center h-full pt-24 pb-20">
+    {/* Logo */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, delay: 0.1 }}
+      className="mb-12"
     >
-      <motion.div
-        className="absolute inset-0 z-0"
-        style={{ y, opacity }}
-      >
-        <div className="absolute inset-0 bg-black/75 z-10" />
+      <div className="w-[200px] h-[300px] md:w-[500px] md:h-[300px] flex items-center justify-center mx-auto relative">
         <Image
-          src="/images/cover.jpg"
-          alt="Luxury home exterior"
+          src="/logo.png"
+          alt="Signature Homes of Carolina Logo"
           fill
-          className="object-cover"
-          priority
+          className="object-contain"
           unoptimized
         />
-      </motion.div>
-
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center pt-16 pb-32">
-
-  {/* Logo */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1, delay: 0.1 }}
-    className="mb-12"
-  >
-    <div className="w-[200px] h-[300px] md:w-[500px] md:h-[300px] flex items-center justify-center mx-auto mb-5 relative">
-      <Image
-        src="/logo.png"
-        alt="Signature Homes of Carolina Logo"
-        fill
-        className="object-contain"
-        unoptimized
-      />
-    </div>
-  </motion.div>
-
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, delay: 0.2 }}
-    className="container"
-  >
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6 text-white">
-      <span className="text-primary">Signature</span> Homes of <span className="text-primary">Carolina</span>
-    </h1>
-    <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-3 text-white/90 font-helvetica">
-      Build <span className="font-bold text-primary">Bold</span>. Live <span className="font-bold text-primary">Beautiful</span>.
-    </p>
-    <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 text-white italic">
-      At Signature Homes of Carolina, we craft more than homes — we bring your dream to life...
-    </p>
-    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-      <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg">
-        <Link href="/projects">
-          View Projects
-          <IconChevronRight className="ml-2 h-5 w-5" />
-        </Link>
-      </Button>
-      <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/10 text-lg">
-        <Link href="/contact">
-          Contact Us
-        </Link>
-      </Button>
-    </div>
-  </motion.div>
-
- <div className="flex pt-8 justify-center">
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 1 }}
-      className="flex gap-6 bg-background/80 backdrop-blur-sm p-3 rounded-full"
-    >
-      <div className="flex items-center gap-2">
-        <IconStarFilled className="h-5 w-5 text-yellow-500" />
-        <span className="text-white font-medium">Award-Winning Builder</span>
-      </div>
-      <div className="hidden md:flex items-center gap-2">
-        <IconMapPin className="h-5 w-5 text-primary" />
-        <span className="text-white font-medium">Beaufort County, SC</span>
       </div>
     </motion.div>
+
+    {/* Title & Text */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="container"
+    >
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-helvetica font-bold mb-6">
+        <span className="text-primary">Signature</span> Homes of <span className="text-primary">Carolina</span>
+      </h1>
+      <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-3 text-white/90 font-helvetica">
+        Build <span className="font-bold text-primary">Bold</span>. Live <span className="font-bold text-primary">Beautiful</span>.
+      </p>
+      <p className="text-lg md:text-xl max-w-3xl mx-auto mb-8 italic text-white/80">
+        At Signature Homes of Carolina, we craft more than homes — we bring your dream to life...
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg">
+          <Link href="/projects">
+            View Projects
+            <IconChevronRight className="ml-2 h-5 w-5" />
+          </Link>
+        </Button>
+        <Button size="lg" variant="outline" asChild className="border-white text-white hover:bg-white/10 text-lg">
+          <Link href="/contact">
+            Contact Us
+          </Link>
+        </Button>
+      </div>
+    </motion.div>
+
+    {/* Badge */}
+    <div className="flex justify-center pt-10">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1 }}
+        className="flex gap-6 bg-background/80 backdrop-blur-sm p-3 rounded-full"
+      >
+        <div className="flex items-center gap-2">
+          <IconStarFilled className="h-5 w-5 text-yellow-500" />
+          <span className="text-white font-medium">Award-Winning Builder</span>
+        </div>
+        <div className="hidden md:flex items-center gap-2">
+          <IconMapPin className="h-5 w-5 text-primary" />
+          <span className="text-white font-medium">Beaufort County, SC</span>
+        </div>
+      </motion.div>
+    </div>
   </div>
-</div>
-    </section>
+</section>
+
   );
 }
 
@@ -431,7 +432,7 @@ function FeaturedProjectsSection() {
   {/* Section Badge */}
   <div className="flex justify-center mb-10">
     <div className="bg-primary/80 px-6 py-2 rounded-lg shadow text-white text-sm font-semibold tracking-wider uppercase">
-      More About Us
+      ABOUT
     </div>
   </div>
 
