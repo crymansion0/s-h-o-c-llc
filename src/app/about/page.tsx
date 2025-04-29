@@ -29,7 +29,7 @@ export default function AboutPage() {
             whileHover={{ scale: 1.05 }}
             className="inline-block px-8 py-3 bg-primary text-white text-base font-medium rounded-xl shadow-lg transition duration-300"
           >
-            Get In Touch
+            Contact Us
           </motion.button>
         </div>
       </section>

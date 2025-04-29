@@ -76,7 +76,7 @@ export default function ServicesPage() {
               What We Build, We Build to Last
             </p>
             <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-4">
-              At Signature Homes of Carolina, every project starts with a conversation — 
+              Every project starts with a conversation — 
               and ends with a home that’s tailor-made for the way you live.
                Whether you're building from the ground up or reimagining the space you're in, we bring craftsmanship, care, and decades of experience to every square foot.
             </p>
@@ -149,40 +149,7 @@ From custom homes to barndominiums, renovations to hurricane-ready builds, our s
       </section>
 
       {/* About Builder Section */}
-      <section className="py-20">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="bg-primary/10 rounded-xl p-8 md:p-12 grid md:grid-cols-3 gap-8 items-center"
-          >
-            <div className="md:col-span-1 flex justify-center">
-              <div className="w-40 h-40 bg-primary/40 rounded-full flex items-center justify-center text-white font-helvetica text-5xl font-bold">
-                DJ
-              </div>
-            </div>
-            <div className="md:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-helvetica font-bold mb-4">
-                About David Johnson
-              </h2>
-              <p className="text-muted-foreground mb-4">
-                With over forty years experience building residential homes, David brings unparalleled expertise to Signature Homes of Carolina. Several of the homes he built for other builders won the coveted Lighthouse Award from the Hilton Head Area Home Builders Association.
-              </p>
-              <Link
-                href="https://www.linkedin.com/in/david-johnson-66104673"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary flex items-center hover:underline"
-              >
-                LinkedIn Profile
-                <IconArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="py-20">
@@ -203,7 +170,7 @@ From custom homes to barndominiums, renovations to hurricane-ready builds, our s
             </p>
             <Button asChild size="lg">
               <Link href="/contact">
-                Get In Touch
+                Contact Us
                 <IconArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

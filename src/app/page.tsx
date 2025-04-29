@@ -85,7 +85,8 @@ function HeroSection() {
       transition={{ duration: 1, delay: 0.1 }}
       className="mb-12"
     >
-      <div className="w-[200px] h-[300px] md:w-[500px] md:h-[300px] flex items-center justify-center mx-auto relative">
+        <div className="w-[350px] h-[500px] sm:w-[500px] sm:h-[600px] md:w-[600px] md:h-[400px] flex items-center justify-center mx-auto relative">
+
         <Image
           src="/logo.png"
           alt="Signature Homes of Carolina Logo"
@@ -331,21 +332,20 @@ function FeaturedProjectsSection() {
   const featuredProjects = [
     {
       id: 1,
-      title: "Project 1",
-      category: "Custom Homes",
-      imageUrl: "/images/39.jpg",
+      title: "Luxury Home",
+      category: "Barndominium",
+      imageUrl: "/images/37.jpg",
+      viewProject: "View Project",
     },
     {
       id: 2,
-      title: "Project 2",
-      category: "Barndominiums",
-      imageUrl: "/images/37.jpg",
+      imageUrl: "/images/soon.png",
+      viewProject: "WIP",
     },
     {
       id: 3,
-      title: "Project 3",
-      category: "Home Renovations",
-      imageUrl: "/images/47.jpg",
+      imageUrl: "/images/soon.png",
+      viewProject: "WIP",
     },
   ];
 
@@ -416,7 +416,7 @@ function FeaturedProjectsSection() {
                     className="mt-4 w-fit p-0 h-auto text-white hover:text-primary hover:bg-transparent"
                   >
                     <Link href="/projects">
-                      View Project
+                      {project.viewProject}
                       <IconArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -427,14 +427,7 @@ function FeaturedProjectsSection() {
         </div>
       </div>
 
-{/* Owner Profile Section */}
 <div className="container mt-32">
-  {/* Section Badge */}
-  <div className="flex justify-center mb-10">
-    <div className="bg-primary/80 px-6 py-2 rounded-lg shadow text-white text-sm font-semibold tracking-wider uppercase">
-      ABOUT
-    </div>
-  </div>
 
 {/* Main Glass Panel */}
 <motion.div
@@ -448,11 +441,8 @@ function FeaturedProjectsSection() {
     {/* Left Column */}
     <div>
       <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-        How We Operate
+        OPERATIONS
       </h2>
-      <p className="text-muted-foreground mb-8 max-w-prose leading-relaxed">
-        At Signature Homes of Carolina, we believe in character, not copies. No cookie-cutter builds — only thoughtful, heart-driven craftsmanship and trusted relationships.
-      </p>
 
       <div className="space-y-6">
         {[
@@ -465,26 +455,6 @@ function FeaturedProjectsSection() {
             icon: "✍️",
             title: "Design Collaboration Within Your Budget",
             desc: "We create a home that fits your lifestyle and budget — without sacrificing quality."
-          },
-          {
-            icon: "📑",
-            title: "Transparent Contracting & Realistic Expectations",
-            desc: "We’re upfront about costs and timelines to keep things clear and stress-free."
-          },
-          {
-            icon: "🧱",
-            title: "Material Selection with Expert Guidance",
-            desc: "We guide you in picking durable, low-maintenance finishes that match your style."
-          },
-          {
-            icon: "📞",
-            title: "Clear Communication Throughout",
-            desc: "You’ll always know what’s happening — no surprises, just consistent updates."
-          },
-          {
-            icon: "📆",
-            title: "Proactive Project Management",
-            desc: "We manage every detail to keep your build on time and within budget."
           },
           {
             icon: "🏅",
@@ -515,24 +485,11 @@ function FeaturedProjectsSection() {
     {/* Right Column */}
     <div>
       <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-        Why Are We Different
+        DIFFERENCE
       </h2>
-      <p className="text-muted-foreground mb-8 max-w-prose leading-relaxed">
-        At Signature Homes of Carolina, we don’t believe in cookie-cutter homes — we believe in craftsmanship with character, homes with heart, and partnerships built on trust. Here’s what makes us stand out:
-      </p>
 
       <div className="space-y-6">
         {[
-          {
-            icon: "🏆",
-            title: "Built on Experience, Backed by Awards",
-            desc: "Founder David Johnson brings 40+ years and multiple Lighthouse Awards to your build."
-          },
-          {
-            icon: "🌪️",
-            title: "Hurricane-Ready, Coastal Strong",
-            desc: "We build with storm-resistant materials to ensure long-term coastal resilience."
-          },
           {
             icon: "🌿",
             title: "Low-Maintenance, Sustainable Materials",
@@ -547,11 +504,6 @@ function FeaturedProjectsSection() {
             icon: "🤝",
             title: "True Partnership from Start to Finish",
             desc: "We’re with you from day one — responsive, proactive, and invested in your success."
-          },
-          {
-            icon: "📣",
-            title: "Communication You Can Count On",
-            desc: "We keep you in the loop, set expectations clearly, and answer every question."
           }
         ].map((item, idx) => (
           <div
@@ -582,12 +534,7 @@ function FeaturedProjectsSection() {
     transition={{ duration: 0.8 }}
     className="text-center mb-12"
   >
-    <h2 className="text-3xl md:text-5xl font-helvetica font-bold mb-6 mt-8">
-      The <span className="text-primary">Signature</span> Difference?
-    </h2>
-    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-      We build homes that are strong, smart, and sustainable — and we treat our clients like family. That’s the Signature Homes of Carolina promise.
-    </p>
+
   </motion.div>
 </motion.div>
 
@@ -707,7 +654,7 @@ function CtaSection() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg">
                   <Link href="/contact">
-                    Get In Touch
+                    Contact Us
                     <IconChevronRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

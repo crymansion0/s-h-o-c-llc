@@ -215,7 +215,7 @@ export function SiteFooter() {
             className="space-y-4 md:col-span-3 lg:col-span-1"
           >
             <motion.h3 variants={itemAnimation} className="text-lg font-semibold mb-4">
-              Get In Touch
+             Contact 
             </motion.h3>
             <motion.div variants={itemAnimation} className="space-y-3">
               {formSubmitted ? (
