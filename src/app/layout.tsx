@@ -1,6 +1,5 @@
 import type React from "react"
 import { Mona_Sans as FontSans } from "next/font/google"
-import { Young_Serif as FontSerif } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { Toaster } from "@/components/ui/sonner"
@@ -14,10 +13,10 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
-const fontSerif = FontSerif({
+const fontSerif = Young_Serif({
   subsets: ["latin"],
   variable: "--font-serif",
-  weight: ["400", "500", "600", "700", "900"],
+  weight: ["400"],
 })
 
 // Note: We can't load Helvetica directly from Google Fonts as it's not available there
