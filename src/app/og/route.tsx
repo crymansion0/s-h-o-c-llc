@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
+export const dynamic = "force-static" // Add this line to make it compatible with static export
 
 export async function GET(request: Request) {
   try {
