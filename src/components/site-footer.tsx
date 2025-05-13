@@ -1,9 +1,11 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import type React from "react"
+
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 import {
   IconBrandFacebook,
   IconBrandInstagram,
@@ -11,13 +13,13 @@ import {
   IconMapPin,
   IconPhone,
   IconCheck, // Import IconCheck for the success animation
-} from "@tabler/icons-react";
-import { motion } from "framer-motion";
-import { useState } from "react";
+} from "@tabler/icons-react"
+import { motion } from "framer-motion"
+import { useState } from "react"
 
 export function SiteFooter() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const currentYear = new Date().getFullYear();
+  const [formSubmitted, setFormSubmitted] = useState(false)
+  const currentYear = new Date().getFullYear()
 
   const footerAnimation = {
     hidden: { opacity: 0, y: 20 },
@@ -29,41 +31,41 @@ export function SiteFooter() {
         staggerChildren: 0.1,
       },
     },
-  };
+  }
 
   const itemAnimation = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  };
+  }
 
   // Handle form submission to Netlify
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const form = e.target as HTMLFormElement;
+    e.preventDefault()
+    const form = e.target as HTMLFormElement
 
     // Netlify form submission requires a hidden field with the form name
-    const formData = new FormData(form);
-    const formAction = form.action;
+    const formData = new FormData(form)
+    const formAction = form.action
 
     try {
       const response = await fetch(formAction, {
         method: "POST",
         body: formData,
-      });
+      })
 
       if (response.ok) {
-        setFormSubmitted(true);
+        setFormSubmitted(true)
         setTimeout(() => {
-          setFormSubmitted(false);
-          form.reset();
-        }, 3000);
+          setFormSubmitted(false)
+          form.reset()
+        }, 3000)
       } else {
-        alert("There was an issue with the submission. Please try again.");
+        alert("There was an issue with the submission. Please try again.")
       }
     } catch (error) {
-      alert("There was an issue with the submission. Please try again.");
+      alert("There was an issue with the submission. Please try again.")
     }
-  };
+  }
 
   return (
     <footer className="bg-muted border-t border-border overflow-hidden">
@@ -78,15 +80,11 @@ export function SiteFooter() {
             className="space-y-4"
           >
             <motion.div variants={itemAnimation}>
-              <h3 className="text-xl font-serif font-semibold text-primary mb-4">
-                Signature Homes of Carolina LLC
-              </h3>
+              <h3 className="text-xl font-serif font-semibold text-primary mb-4">Signature Homes of Carolina LLC</h3>
             </motion.div>
             <motion.div variants={itemAnimation} className="flex items-start space-x-3">
               <IconMapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-              <p className="text-muted-foreground text-sm">
-                Beaufort County, South Carolina
-              </p>
+              <p className="text-muted-foreground text-sm">Beaufort County, South Carolina</p>
             </motion.div>
             <motion.div variants={itemAnimation} className="flex items-start space-x-3">
               <IconPhone className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -134,40 +132,22 @@ export function SiteFooter() {
               Quick Links
             </motion.h3>
             <motion.nav variants={itemAnimation} className="flex flex-col space-y-2">
-              <Link
-                href="/"
-                className="text-muted-foreground hover:text-primary transition-colors text-sm"
-              >
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 Home
               </Link>
-              <Link
-                href="/services"
-                className="text-muted-foreground hover:text-primary transition-colors text-sm"
-              >
+              <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 Services
               </Link>
-              <Link
-                href="/projects"
-                className="text-muted-foreground hover:text-primary transition-colors text-sm"
-              >
+              <Link href="/projects" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 Projects
               </Link>
-              <Link
-                href="/gallery"
-                className="text-muted-foreground hover:text-primary transition-colors text-sm"
-              >
+              <Link href="/gallery" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 Gallery
               </Link>
-              <Link
-                href="/contact"
-                className="text-muted-foreground hover:text-primary transition-colors text-sm"
-              >
+              <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 Contact
               </Link>
-              <Link
-                href="/about"
-                className="text-muted-foreground hover:text-primary transition-colors text-sm"
-              >
+              <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 About
               </Link>
             </motion.nav>
@@ -215,7 +195,7 @@ export function SiteFooter() {
             className="space-y-4 md:col-span-3 lg:col-span-1"
           >
             <motion.h3 variants={itemAnimation} className="text-lg font-semibold mb-4">
-             Contact 
+              Contact
             </motion.h3>
             <motion.div variants={itemAnimation} className="space-y-3">
               {formSubmitted ? (
@@ -228,9 +208,7 @@ export function SiteFooter() {
                     <IconCheck className="h-6 w-6" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Message Sent!</h3>
-                  <p className="text-muted-foreground">
-                    Thank you for contacting us. We'll get back to you shortly.
-                  </p>
+                  <p className="text-muted-foreground">Thank you for contacting us. We'll get back to you shortly.</p>
                 </motion.div>
               ) : (
                 <form
@@ -243,7 +221,7 @@ export function SiteFooter() {
                   {/* Hidden input for Netlify form name */}
                   <input type="hidden" name="form-name" value="message" />
                   <Input type="email" placeholder="Email" name="Email:" className="bg-card border-border" />
-                  <Textarea placeholder="Message" name="Message:"className="h-24 bg-card border-border" />
+                  <Textarea placeholder="Message" name="Message:" className="h-24 bg-card border-border" />
                   <Button className="w-full" type="submit" disabled={formSubmitted}>
                     {formSubmitted ? "Message Sent" : "Send Message"}
                   </Button>
@@ -263,5 +241,5 @@ export function SiteFooter() {
         </motion.div>
       </div>
     </footer>
-  );
+  )
 }

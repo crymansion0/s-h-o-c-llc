@@ -1,32 +1,32 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { IconArrowUp } from "@tabler/icons-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button"
+import { IconArrowUp } from "@tabler/icons-react"
+import { AnimatePresence, motion } from "framer-motion"
 
 export function ScrollToTop() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.scrollY > 500) {
-        setIsVisible(true);
+        setIsVisible(true)
       } else {
-        setIsVisible(false);
+        setIsVisible(false)
       }
-    };
+    }
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+    window.addEventListener("scroll", toggleVisibility)
+    return () => window.removeEventListener("scroll", toggleVisibility)
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    });
-  };
+    })
+  }
 
   return (
     <AnimatePresence>
@@ -49,5 +49,5 @@ export function ScrollToTop() {
         </motion.div>
       )}
     </AnimatePresence>
-  );
+  )
 }

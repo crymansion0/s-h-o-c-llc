@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { IconMenu2, IconPhone } from "@tabler/icons-react";
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import Link from "next/link"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
+import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { IconMenu2, IconPhone } from "@tabler/icons-react"
+import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
 
 const navigationItems = [
   { title: "Home", href: "/" },
@@ -16,24 +16,24 @@ const navigationItems = [
   { title: "Projects", href: "/projects" },
   { title: "Gallery", href: "/gallery" },
   { title: "Contact", href: "/contact" },
-  { title: "About", href: "/about"},
-];
+  { title: "About", href: "/about" },
+]
 
 export function SiteHeader() {
-  const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false); // <-- added state for Sheet
+  const pathname = usePathname()
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false) // <-- added state for Sheet
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+      setScrolled(window.scrollY > 50)
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
-  const handleLinkClick = () => setOpen(false); // <-- close sheet on link click
+  const handleLinkClick = () => setOpen(false) // <-- close sheet on link click
 
   return (
     <header
@@ -41,7 +41,7 @@ export function SiteHeader() {
         "fixed top-0 z-50 w-full transition-all duration-300 border-b",
         scrolled
           ? "bg-background/95 backdrop-blur-md border-border shadow-md py-2"
-          : "bg-background border-transparent py-4"
+          : "bg-background border-transparent py-4",
       )}
     >
       <div className="container flex items-center justify-between">
@@ -67,7 +67,7 @@ export function SiteHeader() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           {navigationItems.map((item, index) => {
-            const isActive = pathname === item.href;
+            const isActive = pathname === item.href
             return (
               <motion.div
                 key={item.href}
@@ -79,17 +79,14 @@ export function SiteHeader() {
                   href={item.href}
                   className={cn(
                     "px-4 py-2 text-sm rounded-md transition-all duration-300 relative hover:text-primary",
-                    isActive
-                      ? "text-primary font-bold"
-                      : "text-muted-foreground"
+                    isActive ? "text-primary font-bold" : "text-muted-foreground",
                   )}
                 >
                   {item.title}
                 </Link>
               </motion.div>
-            );
+            )
           })}
-
         </nav>
 
         {/* Mobile Navigation */}
@@ -118,9 +115,7 @@ export function SiteHeader() {
                   onClick={handleLinkClick}
                   className={cn(
                     "text-lg transition-colors hover:text-primary",
-                    pathname === item.href
-                      ? "text-primary font-bold"
-                      : "text-muted-foreground"
+                    pathname === item.href ? "text-primary font-bold" : "text-muted-foreground",
                   )}
                 >
                   {item.title}
@@ -137,5 +132,5 @@ export function SiteHeader() {
         </Sheet>
       </div>
     </header>
-  );
+  )
 }
