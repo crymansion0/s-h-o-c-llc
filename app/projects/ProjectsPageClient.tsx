@@ -31,7 +31,7 @@ const projectsData = [
     id: 2,
     title: "Sharp Home",
     category: "barndominium",
-    imageUrl: "/images/house2.jpg",
+    imageUrl: "/images/gallery/sharp/1.jpg",
     completed: "2025",
     location: "Beaufort County, SC",
   },
