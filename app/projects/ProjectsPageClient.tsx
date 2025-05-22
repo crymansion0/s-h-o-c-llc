@@ -25,7 +25,7 @@ const projectsData = [
     category: "barndominium",
     imageUrl: "/images/barn.jpg",
     completed: "2025",
-    location: "Beaufort County, SC",
+    location: "Low Country, SC",
   }, 
   {
     id: 2,
@@ -33,7 +33,7 @@ const projectsData = [
     category: "barndominium",
     imageUrl: "/images/gallery/sharp/1.jpg",
     completed: "2025",
-    location: "Beaufort County, SC",
+    location: "Low Country, SC",
   },
 ]
 
