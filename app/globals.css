@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add Helvetica font family */
+@layer base {
+  .font-helvetica {
+    font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 13%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 18%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 18%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 100% 35%; /* Burgundy/red */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 80% 45%; /* Burgundy/red */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 22%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 90% 45%; /* Burgundy/red */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --construction-dark: 0 0% 14%;
+    --construction-light: 0 100% 35%; /* Burgundy/red */
+    --construction-accent: 0 90% 45%; /* Burgundy/red */
+    --construction-muted: 0 40% 25%; /* Burgundy/red */
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 100% 35%; /* Burgundy/red */
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    @apply animate-in fade-in slide-in-from-bottom-4 duration-700;
+  }
+
+  .animate-fade-down {
+    @apply animate-in fade-in slide-in-from-top-4 duration-700;
+  }
+
+  .animate-fade-left {
+    @apply animate-in fade-in slide-in-from-left-8 duration-700;
+  }
+
+  .animate-fade-right {
+    @apply animate-in fade-in slide-in-from-right-8 duration-700;
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 1px hsl(var(--accent));
+    color: transparent;
+  }
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.mask-image-gradient {
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.hover-card-animation:hover img {
+  @apply scale-110 transition-transform duration-700;
+}
+
+.filter-active {
+  @apply bg-primary text-primary-foreground;
+}
+
+.parallax-bg {
+  transform: translateY(var(--parallax-offset, 0));
+  transition: transform 0.15s ease-out;
+}
+
+/* Masonry grid layout */
+.image-grid-masonry {
+  column-count: 1;
+  column-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .image-grid-masonry {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-grid-masonry {
+    column-count: 3;
+  }
+}
+
+.image-grid-masonry > div {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+/* Custom border animation */
+.animated-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-border::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(var(--primary));
+  transition: width 0.3s ease-in-out;
+}
+
+.animated-border:hover::after {
+  width: 100%;
+}
